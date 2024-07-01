@@ -1,0 +1,143 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_courses
+  - office_hours
+  - contact_info
+  - location_details
+  - admission_process
+  - software_testing
+  - python_data_science
+  - mean_stack
+  - python_django
+  - asp_net_mvc
+  - flutter_training
+  - java_spring
+
+
+responses:
+  utter_greet:
+  - text: "Hey! Welcome to Luminar Technolab! How can I assist you today?"
+
+  utter_goodbye:
+  - text: "Bye! Thank you for visiting. Have a great day!"
+
+  utter_courses:
+    - text: " We offer the following courses:<br>
+                  - Software Testing Training - Manual & Automation <br>
+                  - PYTHON DATA SCIENCE - ML - AI - & Power BI  <br>
+                  - MEA(R)N Stack Web Development Expert - Angular & React <br>
+                  - Python Django - React - Full Stack Web Development Expert<br>
+                  - Asp.net MVC with Angular - Full Stack<br>
+                  - Flutter Training<br>
+                  - Java Spring Full Stack Development"
+
+  utter_office_hours:
+  - text: "Our office hours are from 10 AM to 6 PM, Monday to Friday."
+
+  utter_contact:
+  - text: " You can reach us at Luminar Technolab:<br>
+                Phone : +91 8086651651 , +91 8086531531<br>
+                Email : contact@luminartechnolab.com"
+
+  utter_location:
+  - text: "We have offices at Cochin and Calicut:<br>
+             Cochin:<br>
+                   Luminar Technolab Pvt Ltd<br>
+                   Ground Floor, K7 REALTY,<br>
+                   Juma masjid road,<br>
+                   Seaport - Airport Rd, near Opp: District Panchayat,<br>
+                   Kakkanad, Kochi, Kerala - 682030<br>
+                   Call: +91 8086651651<br>
+
+            Calicut<br>
+                   Luminar Technolab Pvt Ltd<br>
+                   2nd Floor, 61/10222,<br>
+                   Mullath Building,<br>
+                   Opp. KSRTC Bus Stand,<br>
+                   Mavoor Road, Calicut, Kerala-673001<br>
+                   Call: +91 8086531531"
+      
+  utter_application:
+  - text: "- To apply for a course at Luminar Technolab, please contact our admissions office at +91 8086651651.<br>
+           - They will provide you with a brochure that includes all necessary details.<br>
+           - You'll need to fill out the provided Google document and submit the required documents listed in the brochure. <br>
+           - For information on the next available batches and admission deadlines, ensure you complete your application process before the batch starts."
+
+  utter_software_testing:
+  - text: "Software Testing Training :<br>
+                Manual Testing , Java foundations, Mobile Testing, Automation <br>
+           Next Batch:<br>
+               Cochin : July 17th 2024 (Offline & Online)<br>
+               Calicut : June 19th 2024 (Offline Only)<br>
+           Duration: 4 Months, 5 Days a Week, 1.5 - 2 Hours/day<br>
+           Course Fee:<br>
+               Fees (EMI Mode) : 41000<br>
+               Fees (One time Payment mode) : 37500"
+  utter_python_data_science:
+  - text: "PYTHON DATA SCIENCE - ML - AI - & Power BI:<br>
+                Introduction to AWS, Amazon Identity and Access Management<br>
+           Next Batch:<br>
+               Cochin : Aug 12th 2024 (Offline & Online)<br>
+               Calicut : Sep 18th 2024 (Offline)<br>
+           Duration:7 Months, 5 Days a Week, 1.5 - 2 Hours/day<br>
+           Course Fee:<br>
+              Fees (EMI Mode) : 72000<br>
+              Fees (One time Payment mode) : 64500"
+  utter_mean_stack:
+  - text: "MEA(R)N Stack Web Development Expert - Angular & React:<br>
+                HTML, CSS, Bootstrap, Javascript, Typescript, Git, Angular, React.js<br>
+           Next Batch:<br>
+              Cochin : Aug 12th 2024 (Offline & Online)<br>
+              Calicut : June 19th 2024 (Offline)<br>
+           Duration: 6 Months, 5 Days a Week, 1.5-2 Hours/day<br>
+           Course Fee:<br>
+              Fees (EMI Mode) : 55000<br>
+              Fees (One time Payment mode) : 49500"
+  utter_python_django:
+  - text: "Python Django - React - Full Stack Web Development Expert:<br>
+             Core Python, Basics of Programming, Unix Commands, Advanced Python, Django <br>
+           Next Batch:<br>
+                Cochin : July 17th 2024 (Offline & Online)<br>
+                Calicut : June 17th 2024 (Offline Only)<br>
+           Duration:6.5 Months, 5 Days a Week, 2 Hours/day<br>
+           Course Fee:<br>
+                 Fees (EMI Mode) : 45000<br>
+                 Fees (One time Payment mode) : 39500"
+  utter_asp_net_mvc:
+  - text: "Asp.net MVC with Angular - Full Stack:<br>
+              Introduction, Git installation, Repository creation in GitHub, Commands in git<br>
+           Next Batch:<br>
+                Cochin : July 17th 2024 (Offline & Online)<br>
+                Calicut : Not Available<br>
+           Duration:5 Months, 5 Days a Week, 2 Hours/day<br>
+           Course Fee:<br>
+                Fees (EMI Mode) : 45000<br>
+                Fees (One time Payment mode) : 39500"
+  utter_flutter_training:
+  - text: "Flutter Training: Dart, Flutter Introduction to Android, Android Studio, vscode<br>
+           Next Batch:<br>
+                Cochin : June 19th 2024 (Offline & Online)<br>
+                Calicut : June 19th 2024 (Offline Only)<br>
+           Duration: 5 months ( 2 Hours/day)<br>
+           Course Fee:<br>
+                Fees (EMI Mode) : 41000<br>
+                Fees (One time Payment mode) : 37500"
+
+  utter_java_spring:
+  - text: "Java Spring Full Stack Development:<br>
+              Java Fundamentals, OOPS, Advanced Java, Java Database <br>
+            Next Batch:<br>
+                Cochin : Aug 21st 2024 (09:00 AM - 11:00 AM)<br>
+                Calicut : Not Available<br>
+            Duration:4 Months, 5 Days a Week, 2 Hours/day<br>
+            Course Fee:<br>
+                Fees (EMI Mode) : 41000<br>
+                Fees (One time Payment mode) : 37500"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
