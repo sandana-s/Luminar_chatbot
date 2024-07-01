@@ -1,0 +1,126 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: ask_courses
+  examples: |
+    - What courses do you offer?
+    - What are the popular courses at your institution?
+    - List the courses you offer?
+    - What are the different courses you have?
+    - What are the courses you provide?
+    - Could you provide details on the courses you provide?
+    - Can you tell me about the available courses?
+    - Can you give me information on the available courses?
+    - course
+
+- intent: office_hours
+  examples: |
+    - What are your office hours?
+    - Can you tell me your working hours?
+    - When are you open?
+    - What time do you open and close?
+    - What hours are you available?
+    - Tell me your operational hours.
+
+- intent: contact_info
+  examples: |
+    - Can you provide the contact information?
+    - How can I get in touch with you?
+    - What is your phone number?
+    - I need the contact details.
+    - Give me the contact info.
+    - How can I contact Luminar Technolab?
+    - What is your email address?
+
+- intent: location_details
+  examples: |
+    - How many branches do you have?
+    - In which cities are your offices located?
+    - Where are your offices located?
+    - How many offices do you have?
+    - Do you have any branches?
+    - What are the addresses of your branches?
+    - In which cities are your offices located?
+    - How many branches do you have?
+    - Tell me the locations of your offices.
+
+- intent: admission_process
+  examples: |
+    - Steps to apply for a course.
+    - Admission requirements.
+    - Application deadlines.
+    - How can I apply for a course?
+    - What are the steps to enroll in a course?
+    - What documents are required for admission?
+
+- intent: software_testing
+  examples: |
+    - Tell me about the software testing course
+    - What is covered in software testing?
+    - Details about software testing training
+    - Software Testing Training - Manual & Automation
+
+- intent: python_data_science
+  examples: |
+    - What is the duration and fee for the python data science course?
+    - Can you give me details about Python Data Science?
+    - PYTHON DATA SCIENCE - ML - AI - & Power BI
+    
+- intent: mean_stack
+  examples: |
+    - Can you give me details about the MEAN stack course?
+    - What is the fee for MEA(R)N Stack?
+    - MEA(R)N Stack Web Development Expert - Angular & React
+
+- intent: python_django
+  examples: |
+    - I want to know about the python django course
+    - Information on Python Django
+    - Python Django - React - Full Stack Web Development Expert
+
+- intent: asp_net_mvc
+  examples: |
+    - Provide information on the asp.net mvc course
+    - I want to know about Asp.net MVC
+    - Asp.net MVC with Angular - Full Stack
+
+- intent: flutter_training
+  examples: |
+    - What is covered in the flutter training course?
+    - What is the duration of Flutter Training?
+    - Flutter Training
+
+- intent: java_spring
+  examples: |
+    - Give me details about the java spring course
+    - Details of Java Spring course
+    - Java Spring Full Stack Development
