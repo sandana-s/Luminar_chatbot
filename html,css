@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminar Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .chat-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 900px;
+            height: 600px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .chat-heading {
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #8B0B8E;
+            padding: 5px;
+            border-radius: 15px;
+            margin-bottom: 80px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .chat-subheading {
+            font-size: 18px;
+            font-style: italic;
+            color: #8B0B8E;
+            text-align: center;
+            width: 100%;
+            margin-top: -75px;
+        }
+
+        .chat-log {
+            height: 80%;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .user-input {
+            width: calc(100% - 70px);
+            height: 30px;
+            padding: 10px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 18px;
+            color: #000000;
+        }
+
+        .send-btn {
+            padding: 12px 30px;
+            border: none;
+            background-color: #8B0B8E;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .send-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .user-msg, .bot-msg {
+            margin: 8px 0;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 80%;
+            display: inline-block;
+            text-align: right;
+        }
+
+        .user-msg {
+            background-color: #8B0B8E;
+            color: #fff;
+            margin-left: auto;
+        }
+
+        .bot-msg {
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: left;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='luminar_logo.png') }}" alt="Luminar Logo" class="logo" onclick="openChat()">
+
+    <div class="chat-container">
+        <div class="chat-heading">LUMINAR TECHNOLAB</div>
+        <div class="chat-subheading">" Where IT experts are born "</div>
+        <div id="chat-log" class="chat-log"></div>
+        <input type="text" id="user-input" class="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()" class="send-btn">Send</button>
+    </div>
+
+    <script>
+        function openChat() {
+            document.querySelector('.logo').style.display = 'none';
+            document.querySelector('.chat-container').style.display = 'flex';
+        }
+
+        function sendMessage() {
+            var userMessage = document.getElementById('user-input').value;
+            if (userMessage.trim() === "") return;
+            var chatLog = document.getElementById('chat-log');
+
+            // Display user message
+            var userMsgElement = document.createElement('div');
+            userMsgElement.className = 'user-msg';
+            userMsgElement.innerText = userMessage;
+            chatLog.appendChild(userMsgElement);
+
+            // Send message to server via AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/send_message', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    console.log("XHR State: ", xhr.readyState, "Status: ", xhr.status);
+                    if (xhr.status === 200) {
+                        var botResponse = JSON.parse(xhr.responseText).response;
+                        console.log("Bot Response: ", botResponse);
+                        // Display bot response
+                        var botMsgElement = document.createElement('div');
+                        botMsgElement.className = 'bot-msg';
+                        botMsgElement.innerText = botResponse;
+                        chatLog.appendChild(botMsgElement);
+
+                        chatLog.scrollTop = chatLog.scrollHeight; // Scroll to the bottom
+                    } else {
+                        console.error('Error: ', xhr.statusText);
+                    }
+                }
+            };
+
+            xhr.onerror = function() {
+                console.error('Request failed');
+            };
+
+            console.log("Sending message: ", userMessage);
+            xhr.send(JSON.stringify({ message: userMessage }));
+
+            // Clear user input
+            document.getElementById('user-input').value = '';
+        }
+    </script>
+</body>
+</html>
